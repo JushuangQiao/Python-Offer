@@ -56,3 +56,7 @@ def print_link_recursion(links):
         print_link_recursion(links.next)
         print links.val
 ```
+
+## 面试题6 重建二叉树
+### 要求：用前序和中序遍历结果构建二叉树，遍历结果中不包含重复值
+### 思路：前序的第一个元素是根结点的值，在中序中找到该值，中序中该值的左边的元素是根结点的左子树，右边是右子树，然后递归的处理左边和右边
