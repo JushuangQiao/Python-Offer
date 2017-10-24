@@ -25,3 +25,15 @@ def find_integer(matrix, num):
     return False
 ```
 
+## 面试题4 替换空格
+### 题目：把字符串中的空格替换成'20%'
+###  方法1：直接使用Python字符串的内置函数
+```python
+>>> ' a  b  '.replace(' ', '20%')
+```
+### 方法2: 使用正则表达式
+```python
+>>> import re
+>>> ret = re.compile(' ')
+>>> ret.sub('20%', '  a  b  ')
+```
