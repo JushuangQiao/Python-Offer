@@ -1,7 +1,7 @@
 #《剑指Offer》面试题的Python实现
 ## 第2章 [面试基础知识](https://github.com/JushuangQiao/Python-Offer/tree/master/second)
 ### 2.2 [编程语言]()
-### 2.3 [数据结构](https://github.com/JushuangQiao/Python-Offer/tree/master/second/third)
+### 2.3 [数据结构](/second/third)
 > #### 面试题3: 二维数组中的查找
 
 ## 第3章 [高质量代码](https://github.com/JushuangQiao/Python-Offer/tree/master/third)
