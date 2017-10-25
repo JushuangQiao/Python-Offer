@@ -24,6 +24,14 @@ def find_min(nums):
 ```
 
 ## 面试题9 斐波那契数列
+> 思路：用生成器
 
+```python
+def fib(num):
+    a, b = 0, 1
+    for i in xrange(num):
+        yield b
+        a, b = b, a + b
+```
 
 ## 面试题10 二进制中1的个数
