@@ -22,6 +22,25 @@ def last_kth(link, k):
 ```
 
 ## 面试题16 反转链表
+> 要求：反转链表
+>
+> 思路：需要考虑空链表，只有一个结点的链表
+
+```python
+def reverse_link(head):
+    if not head or not head.next:
+        return head
+    then = head.next
+    head.next = None
+    last = then.next
+    while then:
+        then.next = head
+        head = then
+        then = last
+        if then:
+            last = then.next
+    return head
+```
 
 ## 面试题17 合并两个排序的链表
 
