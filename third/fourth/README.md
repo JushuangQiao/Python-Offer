@@ -64,3 +64,19 @@ def merge_link(head1, head2):
 ```
 
 ## 面试题18 树的子结构
+> 要求：判断一棵二叉树是不是另一个的子结构
+>
+> 思路：使用递归
+
+```python
+def sub_tree(tree1, tree2):
+    if tree1 and tree2:
+        if tree1.val == tree2.val:
+            return sub_tree(tree1.left, tree2.left) and sub_tree(tree1.right, tree2.right)
+        else:
+            return sub_tree(tree1.left, tree2) or sub_tree(tree1.right, tree2)
+    if not tree1 and tree2:
+        return False
+    return True
+```
+
