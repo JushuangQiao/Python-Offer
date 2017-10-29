@@ -1,39 +1,10 @@
-# 4.2 画图让抽象问题形象化
-
-## 面试题19 二叉树的镜像
-> 思路一：可以按层次遍历，每一层从右到左
->
-> 思路二：使用递归
-
-```python
-def mirror_bfs(root):
-    ret = []
-    queue = deque([root])
-    while queue:
-        node = queue.popleft()
-        if node:
-            ret.append(node.val)
-            queue.append(node.right)
-            queue.append(node.left)
-    return ret
+# coding=utf-8
+"""
+按从外到里的顺序顺时针打印矩阵
+每一圈的开始位置总是坐上角元素[0, 0], [1, 1]...
+"""
 
 
-def mirror_pre(root):
-    ret = []
-
-    def traversal(root):
-        if root:
-            ret.append(root.val)
-            traversal(root.right)
-            traversal(root.left)
-    traversal(root)
-    return ret
-```
-
-面试题20 顺时针打印矩阵
-> 每一圈的开始位置总是坐上角元素[0, 0], [1, 1]...
-
-```python
 def print_matrix(matrix):
     """
     :param matrix: [[]]
@@ -66,5 +37,18 @@ def print_circle(matrix, start, rows, cols, ret):
     if start < row and start < col:
         for r in range(start+1, row)[::-1]:
             ret.append(matrix[r][start])
-```
 
+
+if __name__ == '__main__':
+    """
+    mat = [[1, 2, 3],
+           [5, 6, 7],
+           [9, 10, 11]]
+    mat = [[]]
+    mat = [[1]]
+    mat = [[1, 2, 3, 4]]
+    mat = [[1], [2], [3], [4]]
+    """
+    mat = [[1, 2],
+           [5, 6]]
+    print_matrix(mat)
