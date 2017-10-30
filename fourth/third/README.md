@@ -65,5 +65,23 @@ class MyStack(object):
 ```
 
 ## 面试题23 从上往下打印二叉树
+> 思路：广度优先搜索，按层次遍历
+>
+
+```python
+ def bfs(tree):
+    if not tree:
+        return None
+    stack = [tree]
+    ret = []
+    while stack:
+        node = stack.pop(0)
+        ret.append(node.val)
+        if node.left:
+            stack.append(node.left)
+        if node.right:
+            stack.append(node.right)
+    return ret
+```
 
 ## 面试题24 二叉树的后序遍历序列
