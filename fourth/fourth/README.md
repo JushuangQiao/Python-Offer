@@ -60,5 +60,39 @@ class Solution(object):
 ```
 
 ## 面试题27 二叉搜索树与双向链表
+> 要求：将二叉搜索树转化成一个排序的双向链表，只调整树中结点的指向
+>
+> 中序遍历，根结点的left指向左子树的最后一个(最大)值，right指向右子树的(最小)值
+>
+> 题目构造了一个普通二叉树用来测试，构造时按照二叉搜索树的顺序输入结点，空结点用None表示，详情见twenty_seven.py
+>
+
+```python
+class Solution(object):
+
+    @staticmethod
+    def convert(tree):
+        """结点转换"""
+        if not tree:
+            return None
+        p_last = Solution.convert_nodes(tree, None)
+        while p_last and p_last.left:  # 获取链表头结点
+            p_last = p_last.left
+        return p_last
+
+    @staticmethod
+    def convert_nodes(tree, last):
+        if not tree:
+            return None
+        if tree.left:
+            last = Solution.convert_nodes(tree.left, last)
+        if last:
+            last.right = tree
+        tree.left = last
+        last = tree
+        if tree.right:
+            last = Solution.convert_nodes(tree.right, last)
+        return last
+```
 
 ## 面试题28 字符串的排列
