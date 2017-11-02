@@ -96,3 +96,26 @@ class Solution(object):
 ```
 
 ## 面试题28 字符串的排列
+> 要求：求输入字符串的全排列
+>
+> 思路：递归完成，也可以直接使用库函数
+>
+
+```python
+def my_permutation(s):
+    str_set = []
+    ret = []  # 最后的结果
+
+    def permutation(string):
+        for i in string:
+            str_tem = string.replace(i, '')
+            str_set.append(i)
+            if len(str_tem) > 0:
+                permutation(str_tem)
+            else:
+                ret.append(''.join(str_set))
+            str_set.pop()
+
+    permutation(s)
+    return ret
+```
