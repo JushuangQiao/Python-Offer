@@ -10,9 +10,11 @@ def cmp(a, b):
 
 
 def print_mini(nums):
+    if not nums:
+        return
     print int(''.join([str(num) for num in sorted(nums, cmp=cmp)]))
 
 
 if __name__ == '__main__':
-    test = [1, 2, 321, 3, 32]
+    test = []
     print_mini(test)
