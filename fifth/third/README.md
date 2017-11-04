@@ -44,4 +44,33 @@ def first_not_repeating_char(string):
 
 ## 面试题36 数组中的逆序对
 
+
 ## 面试题37 两个链表的第一个公共结点
+> 思路: 先获取到两个链表的长度，然后长的链表先走多的几步，之后一起遍历
+>
+> 文件thirty_seven.py中包含了设置链表公共结点的代码，可以用来测试
+
+```python
+def get_first_common_node(link1, link2):
+    if not link1 or not link2:
+        return None
+    length1 = length2 = 0
+    move1, move2 = link1, link2
+    while move1:  # 获取链表长度
+        length1 += 1
+        move1 = move1.next
+    while move2:
+        length2 += 1
+        move2 = move2.next
+    while length1 > length2:  # 长链表先走多的长度
+        length1 -= 1
+        link1 = link1.next
+    while length2 > length1:
+        length2 -= 1
+        link2 = link2.next
+    while link1:  # 链表一起走
+        if link1 == link2:
+            return link1
+        link1, link2 = link1.next, link2.next
+    return None
+```
