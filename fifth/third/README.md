@@ -22,6 +22,25 @@ def get_ugly(n):
 ```
 
 ## 面试题35 第一个只出现一次的字符
+> 要求：求字符串中第一个只出现一次的字符
+>
+> 思路: 使用两个hash，一个记录每个字符穿线的次数，另一个记录每个字符第一次出现的位置
+
+```python
+def first_not_repeating_char(string):
+    if not string:
+        return -1
+    count = {}
+    loc = {}
+    for k, s in enumerate(string):
+        count[s] = count[s] + 1 if count.get(s) else 1
+        loc[s] = loc[s] if loc.get(s) else k
+    ret = float('inf')
+    for k in loc.keys():
+        if count.get(k) == 1 and loc[k] < ret:
+            ret = loc[k]
+    return ret
+```
 
 ## 面试题36 数组中的逆序对
 
