@@ -50,6 +50,16 @@ def get_last_k(nums, k):
 
 
 ## 面试题39 二叉树的深度
+> 思路: 分别递归的求左右子树的深度
+
+```python
+def get_depth(tree):
+    if not tree:
+        return 0
+    if not tree.left and not tree.right:
+        return 1
+    return 1 + max(get_depth(tree.left), get_depth(tree.right))
+```
 
 ## 面试题40 数组中只出现一次的数字
 
