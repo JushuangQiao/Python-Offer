@@ -145,4 +145,13 @@ def reverse_words(sentence):
     tmp = sentence.split()
     return ' '.join(tmp[::-1])  # 使用join效率更好，+每次都会创建新的字符串
 ```
+### 左旋转字符串
+> 思路: 把字符串的前面的若干位移到字符串的后面
 
+```python
+def rotate_string(s, n):
+    if not s:
+        return ''
+    n %= len(s)
+    return s[n:] + s[:n]
+```
