@@ -73,3 +73,30 @@ if __name__ == '__main__':
     print s.a, t.a
     print s.val, t.val
 ```
+
+### 方法三 使用模块实现单例模式
+> 可以使用模块创建单例模式，然后在其他模块中导入该单例，这个需要所有人遵守导入规则，不然就没法实现单例了
+
+```python
+# use_module.py
+class SingleTon(object):
+
+    def __init__(self, val):
+        self.val = val
+
+single = SingleTon(2)
+
+# test_module.py
+from use_module import single
+
+a = single
+b = single
+print a.val, b.val
+print a is b
+a.val = 233
+print a.val, b.val
+
+```
+
+### 方法四 使用metaclass实现单例模式
+> 目前我对元类还了解不深，以后来填坑
