@@ -1,10 +1,9 @@
-# 编程语言
+# coding=utf-8
+"""
+使用__new__实现单例模式
+"""
 
-## 面试题2 使用Python实现单例模式
 
-### 方法一 使用__new__实现单例模式
-> 使用__new__实现单例模式，具体我对__new__的理解可以点[这里](http://www.cnblogs.com/qiaojushuang/p/7805973.html)
-```python
 class SingleTon(object):
     _instance = {}
 
@@ -41,4 +40,22 @@ if __name__ == '__main__':
     # 类型验证
     print type(a)  # <class '__main__.MyClass'>
     print type(b)  # <class '__main__.MyClass'>
-```
+    # 实例方法
+    a.obj_fun()  # 2 obj_fun
+    b.obj_fun()  # 2 obj_fun
+    # 类方法
+    MyClass.class_fun()  # 22 classmethod
+    a.class_fun()  # 22 classmethod
+    b.class_fun()  # 22 classmethod
+    # 静态方法
+    MyClass.static_fun()  # staticmethod
+    a.static_fun()  # staticmethod
+    b.static_fun()  # staticmethod
+    # 类变量
+    a.class_val = 33
+    print MyClass.class_val  # 22
+    print a.class_val  # 33
+    print b.class_val  # 33
+    # 实例变量
+    print b.val  # 2
+    print a.val  # 2
