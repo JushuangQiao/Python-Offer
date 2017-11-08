@@ -48,4 +48,3 @@ def num_of_1(n):
         n = n & n-1
     return ret
 ```
-
