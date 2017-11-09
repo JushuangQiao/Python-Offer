@@ -79,4 +79,3 @@ def sub_tree(tree1, tree2):
         return False
     return True
 ```
-
