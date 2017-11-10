@@ -67,4 +67,3 @@ def print_circle(matrix, start, rows, cols, ret):
         for r in range(start+1, row)[::-1]:
             ret.append(matrix[r][start])
 ```
-
