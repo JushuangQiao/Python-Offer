@@ -76,3 +76,4 @@ def last_num(n, m):
         ret = (m + ret) % i
     return ret
 ```
+
