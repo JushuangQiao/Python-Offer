@@ -19,8 +19,9 @@ def find_min(nums):
             return min(nums)
         if nums[left] <= nums[mid]:
             left = mid
-        if nums[mid] >= nums[mid]:
+        if nums[right] >= nums[mid]:
             right = mid
+    return nums[0]
 ```
 
 ## 面试题9 斐波那契数列
