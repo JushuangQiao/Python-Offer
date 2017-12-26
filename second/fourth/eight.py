@@ -19,8 +19,9 @@ def find_min(nums):
             return min(nums)
         if nums[left] <= nums[mid]:
             left = mid
-        if nums[mid] >= nums[mid]:
+        if nums[right] >= nums[mid]:
             right = mid
+    return nums[0]
 
 if __name__ == '__main__':
     print find_min([2, 2, 4, 5, 6, 2])
