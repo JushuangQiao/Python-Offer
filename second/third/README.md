@@ -1,6 +1,6 @@
 # 数据结构
 
-## 面试题3 二维数组中的查找
+## 面试题3 二维数组中的查找 [LeetCode](https://leetcode.com/problems/search-a-2d-matrix-ii/)
 > 题目：二维数组中，每行从左到右递增，每列从上到下递增，给出一个数，判断它是否在数组中
 >
 > 思路：从左下角或者右上角开始比较
@@ -63,7 +63,7 @@ def print_link_recursion(links):
         print links.val
 ```
 
-## 面试题6 重建二叉树
+## 面试题6 重建二叉树 [LeetCode](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
 > 要求：用前序和中序遍历结果构建二叉树，遍历结果中不包含重复值
 >
 > 思路：前序的第一个元素是根结点的值，在中序中找到该值，中序中该值的左边的元素是根结点的左子树，右边是右子树，然后递归的处理左边和右边
